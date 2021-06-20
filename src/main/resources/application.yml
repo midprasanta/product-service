@@ -1,2 +1,23 @@
 server:
   port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/product-service-db
+    username: admin
+    password: admin       
+  jpa:
+    open-in-view: false
+  liquibase:
+    contexts: prod
+  profiles:
+    active: dev
+     
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always   
